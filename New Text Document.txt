@@ -1,0 +1,238 @@
+package com.md.model;
+public class Address 
+{
+	String hno;
+	String street;
+	String city;
+	String state;
+	public Address() {}
+	public Address(String hno, String street, String city, String state) 
+	{
+		this.hno = hno;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+	}
+	public String getHno() 
+	{
+		return hno;
+	}
+	public void setHno(String hno) 
+	{
+		this.hno = hno;
+	}
+	public String getStreet()
+	{
+		return street;
+	}
+	public void setStreet(String street) 
+	{
+		this.street = street;
+	}
+	public String getCity() 
+	{
+		return city;
+	}
+	public void setCity(String city)
+	{
+		this.city = city;
+	}
+	public String getState()
+	{
+		return state;
+	}
+	public void setState(String state) 
+	{
+		this.state = state;
+	}
+	
+}
+
+
+
+
+
+???????
+
+
+package com.md.model;
+public class Employee
+{
+	int employeeId;
+	String employeeName;
+	double salary;
+	Address address;
+	public Employee() {}
+	public Employee(int employeeId, String employeeName, double salary, Address address) 
+	{
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.salary = salary;
+		this.address = address;
+	}
+	public int getEmployeeId() 
+	{
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) 
+	{
+		this.employeeId = employeeId;
+	}
+	public String getEmployeeName()
+	{
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) 
+	{
+		this.employeeName = employeeName;
+	}
+	public double getSalary()
+	{
+		return salary;
+	}
+	public void setSalary(double salary) 
+	{
+		this.salary = salary;
+	}
+	public Address getAddress() 
+	{
+		return address;
+	}
+	public void setAddress(Address address)
+	{
+		this.address = address;
+	}
+	
+}
+
+
+
+
+?????????
+
+
+
+import com.md.model.Address;
+import com.md.model.Department;
+import com.md.model.Employee;
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		Employee[] elist = new Employee[3];
+		elist[0] = new Employee(102, "Babu", 2000, new Address("7-8-9", "MG Street","Banglore","karnataka"));
+		elist[1] = new Employee(103, "Charan", 3000, new Address("1-2-3", "Anna Street","Channai","Tamilnadu"));
+		elist[2] = new Employee(101, "Ajay", 1000, new Address("4-5-6", "Bank Street","Hyderbad","Telangana"));
+
+		Department d = new Department(10, "Sales", "Mumbai",elist);
+		
+		System.out.println("---------------------Department Details---------------------");
+		System.out.println("Department Number:     " + d.getDepartmentNo() );
+		System.out.println("Department Name :      " + d.getName());
+		System.out.println("Department Location:   " + d.getLocation());
+		for (Employee e : elist)
+		{
+			System.out.println("Employee ID:     " + e.getEmployeeId());
+			System.out.println("Employee Name:   " + e.getEmployeeName());
+			System.out.println("Salary:          " + e.getSalary());
+			System.out.println("---------Address--------");
+			System.out.println("House No:        " + e.getAddress().getHno());
+			System.out.println("Street:          " + e.getAddress().getStreet());
+			System.out.println("City :           " + e.getAddress().getCity());
+			System.out.println("State:           " + e.getAddress().getState());
+			System.out.println();
+		}
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//		Employee e = new Employee(7001, "Charan", 7560, new Address("1-2-3","MG Street","Banglore","Karnataka"));
+//		System.out.println("Employee ID:     " + e.getEmployeeId());
+//		System.out.println("Employee Name:   " + e.getEmployeeName());
+//		System.out.println("Salary:          " + e.getSalary());
+//		System.out.println("---------Address--------");
+//		System.out.println("House No:        " + e.getAddress().getHno());
+//		System.out.println("Street:          " + e.getAddress().getStreet());
+//		System.out.println("City :           " + e.getAddress().getCity());
+//		System.out.println("State:           " + e.getAddress().getState());
+
+
+
+
+
+
+
+
+???????????
+
+
+
+
+
+
+package com.md.model;
+public class Department
+{
+	private int departmentNo;
+	private String name;
+	private String location;
+	Employee[] employees;
+	public Department() {}
+	public Department(int departmentNo, String name, String location, Employee[] employees) 
+	{
+		this.departmentNo = departmentNo;
+		this.name = name;
+		this.location = location;
+		this.employees = employees;
+	}
+	public int getDepartmentNo() 
+	{
+		return departmentNo;
+	}
+	public void setDepartmentNo(int departmentNo)
+{
+		this.departmentNo = departmentNo;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public void setName(String name) 
+	{
+		this.name = name;
+	}
+	public String getLocation() 
+	{
+		return location;
+	}
+	public void setLocation(String location)
+	{
+		this.location = location;
+	}
+	public Employee[] getEmployees()
+	{
+		return employees;
+	}
+	public void setEmployees(Employee[] employees) 
+	{
+		this.employees = employees;
+	}
+	
+}
